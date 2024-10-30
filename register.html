@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Register for an Eco Store account to start enjoying our sustainable products and services.">
+    <title>Register | Eco Store</title>
+    <link rel="stylesheet" href="styles/register.css">
+    <link rel="stylesheet" href="styles/header.css">
+</head>
+<body>
+    <div class="video-background">
+        <video autoplay muted loop>
+            <source src="path_to_your_video.mp4" type="video/mp4">
+            Your browser does not support HTML5 video.
+        </video>
+    </div>
+
+    <main id="register-page">
+        <section class="register-container">
+            <div class="register-info">
+                <div class="logo">
+                    <a href="index.html" class="logo-link" aria-label="Eco Store Home">
+                        <span class="logo-icon">🍃</span>
+                        <span class="logo-text">Eco Store</span>
+                    </a>
+                </div>
+                
+                <h2>Welcome! 🌿</h2>
+                <p>Create an account to explore eco-friendly products.</p>
+            </div>
+            
+            <div class="register-form-container">
+                <form class="register-form" action="#" method="post" aria-label="Registration Form">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" required placeholder="Your Name">
+    
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required placeholder="you@example.com">
+    
+                    <label for="password">Password:</label>
+                    <input type="password" id="password" name="password" required placeholder="Create a password">
+    
+                    <button type="submit" class="submit-button">Register</button>
+                    <a href="login.html" class="login-link">Log in</a>
+                </form>
+
+                <div class="social-login">
+                    <p>Or sign up with:</p>
+                    <button class="social-button facebook">Facebook</button>
+                    <button class="social-button google">Google</button>
+                </div>
+    
+                <div class="privacy">
+                    <p>We value your privacy.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="script/register.js"></script>
+</body>
+</html>
