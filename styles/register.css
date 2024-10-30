@@ -1,0 +1,172 @@
+/* General styles */
+body {
+    /* font-family: 'Roboto', sans-serif; */
+    margin: 0;
+    padding: 0;
+    color: #4a4a4a;
+    overflow: hidden; /* Prevent scrollbars from appearing due to video */
+}
+
+.video-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1; /* Keep video behind content */
+    overflow: hidden;
+}
+
+.video-background video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Cover the entire area */
+}
+
+/* Main registration page styles */
+#register-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Full height for centering */
+    padding: 20px;
+}
+
+.logo-link {
+    justify-content: center;
+}
+
+.register-container {
+    display: flex;
+    flex-direction: row;
+    background: rgba(255, 255, 255, 0.9); /* Slightly transparent white */
+    border-radius: 15px; /* Increased border radius */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Deeper shadow for depth */
+    max-width: 600px; /* Adjusted width for compactness */
+    width: 90%; /* Use a percentage for responsiveness */
+    padding: 20px; /* Consistent padding */
+    margin: auto; /* Center the container */
+}
+
+.register-info {
+    flex: 1;
+    padding: 20px; /* Consistent padding */
+    background-color: #e6f2e6; /* Light green background */
+    text-align: center;
+    border-radius: 15px 0 0 15px; /* Rounded corners on the left */
+}
+
+.register-info h2 {
+    font-size: 24px; /* Slightly smaller heading */
+    color: #3c763d; /* Darker green */
+    margin-bottom: 10px; /* Space below heading */
+}
+
+.register-info p {
+    font-size: 14px; /* Smaller paragraph for brevity */
+    color: #666; /* Gray text */
+}
+
+.register-form-container {
+    flex: 1;
+    padding: 20px; /* Consistent padding */
+}
+
+.register-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.register-form label {
+    margin-bottom: 6px; /* Small margin */
+    font-weight: bold;
+    text-align: left; /* Align text left */
+}
+
+.register-form input {
+    padding: 12px; /* Standard padding */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 16px; /* Margin for spacing */
+    font-size: 14px; /* Standard font size */
+    transition: border-color 0.3s; /* Transition for focus effect */
+}
+
+.register-form input:focus {
+    border-color: #3c763d; /* Focus border color */
+}
+
+.submit-button {
+    background-color: #3c763d; /* Green color */
+    color: white;
+    padding: 12px; /* Consistent padding */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px; /* Standard font size */
+    transition: background-color 0.3s; /* Transition for hover effect */
+}
+
+.submit-button:hover {
+    background-color: #357a38; /* Darker green on hover */
+}
+
+.login-link {
+    color: #3c763d; /* Green text */
+    margin-top: 10px; /* Margin for spacing */
+    text-align: center; /* Center link */
+    display: block; /* Make it block for easier clicking */
+    transition: color 0.3s; /* Transition for hover effect */
+}
+
+.login-link:hover {
+    color: #2b5d2a; /* Darker green on hover */
+}
+
+.social-login {
+    margin-top: 10px; /* Increased spacing */
+    text-align: center; /* Center social login text */
+}
+
+.social-button {
+    background-color: #3b5998; /* Facebook color */
+    color: white;
+    padding: 10px; /* Standard padding */
+    border: none;
+    border-radius: 5px;
+    margin: 4px 0; /* Consistent margin */
+    cursor: pointer;
+    width: 100%; /* Full width for buttons */
+    font-size: 14px; /* Standard font size */
+    transition: background-color 0.3s; /* Transition for hover effect */
+}
+
+.social-button.google {
+    background-color: #db4437; /* Google color */
+}
+
+.social-button:hover {
+    opacity: 0.9; /* Slight transparency on hover */
+}
+
+.privacy {
+    margin-top: 10px; /* Increased margin */
+    text-align: center;
+    color: #777; /* Softer gray */
+}
+
+/* Responsive Styles */
+@media (max-width: 600px) {
+    .register-container {
+        flex-direction: column; /* Stack elements on smaller screens */
+        max-width: 100%; /* Full width on mobile */
+    }
+
+    .register-info, .register-form-container {
+        border-radius: 10px; /* Keep rounded corners */
+    }
+
+    .register-info {
+        border-radius: 10px 10px 0 0; /* Rounded top corners */
+    }
+}

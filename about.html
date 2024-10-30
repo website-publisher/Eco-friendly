@@ -1,55 +1,214 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Learn more about EcoFriendly's mission, values, and commitment to sustainability. Discover how we promote eco-friendly living through our curated products.">
-    <title>About Us | EcoFriendly</title>
+    <meta name="description"
+        content="Learn more about Eco Store's mission, values, and commitment to sustainability. Discover how we promote eco-friendly living through our curated products.">
+    <title>About Us | Eco Store</title>
     <link rel="stylesheet" href="styles/styles.css">
+    <link rel="stylesheet" href="styles/footer.css">
+    <link rel="stylesheet" href="styles/header.css">
+    <link rel="stylesheet" href="styles/about.css">
 </head>
+
 <body>
-    <header>
-        <div class="container">
-            <h1 class="logo"><a href="index.html">EcoFriendly</a></h1>
-            <nav>
-                <ul>
+    <header class="eco-header">
+        <div class="header-container">
+            <div class="logo">
+                <a href="index.html" class="logo-link" aria-label="Eco Store Home">
+                    <span class="logo-icon">🍃</span>
+                    <span class="logo-text">Eco Store</span>
+                </a>
+            </div>
+
+            <nav class="main-nav">
+                <button class="mobile-menu-toggle" aria-label="Toggle menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <ul class="nav-links">
                     <li><a href="index.html">Home</a></li>
-                    <li><a href="products.html">Products</a></li>
-                    <li><a href="about.html">About Us</a></li>
-                    <li><a href="login.html">Login</a></li>
-                    <li><a href="register.html">Register</a></li>
+                    <li><a href="products.html">Shop</a></li>
+                    <li><a href="about.html" class="active">About Us</a></li>
+                    <li><a href="#contact">Contact Us</a></li>
                 </ul>
             </nav>
+
+            <div class="header-actions">
+                <form class="search-bar" role="search">
+                    <input type="search" placeholder="Search products..." aria-label="Search products">
+                    <button type="submit" aria-label="Submit search">🔍</button>
+                </form>
+
+                <a href="login.html" class="icon-btn" aria-label="My Account">👤</a>
+                <a href="#wishlist" class="icon-btn" aria-label="Wishlist">❤️</a>
+                <div class="eco-cart">
+                    <a href="#" class="cart-link icon-btn" aria-label="Shopping Cart">
+                        🛒 <span class="cart-count">0</span>
+                    </a>
+
+                    <div class="cart-modal" id="cartModal">
+                        <div class="cart-content">
+                            <h2>Your Cart</h2>
+                            <ul id="cartItems"></ul>
+                            <p>Total: <span id="cartTotal">₹0</span></p>
+                            <button id="clearCart">Clear Cart</button>
+                            <button id="closeCart">Close</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="currency-switcher">
+                    <button class="current-currency" aria-label="Select currency">
+                        INR <span class="dropdown-arrow">▼</span>
+                    </button>
+                    <ul class="currency-options">
+                        <li><button aria-label="Switch to USD">USD 🇺🇸</button></li>
+                        <li><button aria-label="Switch to EUR">EUR 🇪🇺</button></li>
+                        <li><button aria-label="Switch to INR">INR 🇮🇳</button></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="promo-bar" role="alert">
+            <p>🌱 100% Joy. 0% Plastic. | Full disclosure | Proudly made in India</p>
+            <button class="close-promo" aria-label="Close promotion banner">✕</button>
         </div>
     </header>
 
     <main>
-        <section id="about">
-            <h2>About Us</h2>
-            <div class="about-content">
-                <p>Welcome to EcoFriendly! Our mission is to promote sustainable living by offering eco-friendly products. We are committed to using materials and practices that are good for the planet and its people. Our values are deeply rooted in environmental responsibility, and we strive to make a positive impact with every product we offer.</p>
-                <p>At EcoFriendly, we believe that every small action contributes to a larger change. Our curated selection of products is designed to help you live a greener life while maintaining quality and style.</p>
-                <p>Our team is passionate about sustainability and is dedicated to ensuring that our practices are as eco-friendly as our products. We invite you to join us on this journey towards a more sustainable future.</p>
-            </div>
-            <a href="index.html" class="btn" aria-label="Back to Home">Back to Home</a>
-        </section>
-    </main>    
+        <section class="about-section">
+            <div class="about-container">
+                <div class="about-text">
+                    <h2>🌿 About Eco Store</h2>
+                    <p>Welcome to Eco Store! We're on a mission to inspire sustainable living through a wide array of
+                        eco-friendly products. 🌍 Our goal is to empower consumers to make choices that foster a
+                        healthier planet.</p>
 
-    <footer>
-        <div class="container">
-            <p>&copy; 2024 EcoFriendly</p>
-            <div class="social">
-                <a href="#" aria-label="Facebook">Facebook</a>
-                <a href="#" aria-label="Twitter">Twitter</a>
-                <a href="#" aria-label="Instagram">Instagram</a>
+                    <h3>🎯 Our Mission</h3>
+                    <p>To spark a global movement towards sustainability by offering innovative, eco-conscious products
+                        and fostering community education.</p>
+
+                    <h3>💚 Our Core Values</h3>
+                    <ul>
+                        <li><strong>Integrity:</strong> We believe in transparency and ethical sourcing.</li>
+                        <li><strong>Sustainability:</strong> Prioritizing eco-friendly materials and practices.</li>
+                        <li><strong>Community:</strong> Building lasting relationships with our customers and partners.
+                        </li>
+                    </ul>
+
+                    <h3>👥 Meet Our Team</h3>
+                    <p>Our dedicated team of sustainability advocates is committed to making a difference. Together,
+                        we’re shaping a greener future!</p>
+
+                    <h3>🔍 Our Sourcing Process</h3>
+                    <p>We work closely with trusted manufacturers to ensure that every product is made from sustainable
+                        materials, helping us protect our planet.</p>
+
+                    <h3>📬 Join Us!</h3>
+                    <p>Be part of our journey! Subscribe to our newsletter for exclusive tips on sustainable living and
+                        follow us on social media for the latest updates.</p>
+
+                    <a href="index.html" class="btn" aria-label="Back to Home">🏡 Back to Home</a>
+                </div>
+                <div class="about-image">
+                    <div class="placeholder">🌍 Your Image Here</div>
+                    <svg class="eco-svg" viewBox="0 0 100 100">
+                        <circle cx="50" cy="50" r="40" fill="#4CAF50" />
+                        <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" fill="white"
+                            font-size="10">Eco Store</text>
+                    </svg>
+                </div>
             </div>
-            <form action="#" method="post" class="newsletter">
-                <input type="email" placeholder="Subscribe to our newsletter" required>
-                <button type="submit">Subscribe</button>
-            </form>
+
+            <div class="impact-section">
+                <h3>✨ Our Impact</h3>
+                <p>Through our products and initiatives, we’ve made significant strides in sustainability:</p>
+                <ul>
+                    <li>🌱 Over 10,000 plastic bottles saved from landfills.</li>
+                    <li>♻️ 5,000 trees planted through community partnerships.</li>
+                    <li>🌍 Hosting workshops that educate on sustainable living.</li>
+                </ul>
+                <div class="impact-graphics">
+                    <div class="impact-box">
+                        <div class="impact-icon">🌳</div>
+                        <p>Community Gardens Established</p>
+                    </div>
+                    <div class="impact-box">
+                        <div class="impact-icon">♻️</div>
+                        <p>Recycling Programs Supported</p>
+                    </div>
+                    <div class="impact-box">
+                        <div class="impact-icon">🌊</div>
+                        <p>Water Conservation Initiatives</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="call-to-action">
+                <h3>🌟 Get Involved!</h3>
+                <p>Want to contribute? Share your sustainable practices with us on social media using
+                    <strong>#EcoStoreCommunity</strong>! 📸</p>
+                <a href="subscribe.html" class="btn" aria-label="Subscribe Now">✉️ Subscribe Now</a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="eco-footer">
+        <div class="footer-container">
+            <div class="footer-section logo-section">
+                <a href="index.html" class="logo-link" aria-label="Eco Store Home">
+                    <span class="logo-icon">🍃</span>
+                    <span class="logo-text">Eco Store</span>
+                </a>
+                <p>Your trusted source for sustainable products.</p>
+            </div>
+
+            <nav class="footer-section nav-links">
+                <h4>Explore</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="products.html">Shop</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+
+            <div class="footer-section social-media">
+                <h4>Connect With Us</h4>
+                <ul>
+                    <li><a href="#" aria-label="Follow us on Twitter">🐦</a></li>
+                    <li><a href="#" aria-label="Connect on LinkedIn">💼</a></li>
+                    <li><a href="#" aria-label="Follow us on Instagram">📷</a></li>
+                    <li><a href="#" aria-label="Like us on Facebook">👍</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section newsletter-signup">
+                <h4>Join Our Community</h4>
+                <form action="#" method="post">
+                    <input type="email" name="email" placeholder="Enter your email"
+                        aria-label="Enter your email for newsletter" required>
+                    <button type="submit" aria-label="Subscribe to newsletter">Subscribe</button>
+                </form>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2024 Eco Store. All Rights Reserved. | <a href="/privacy-policy">Privacy Policy</a></p>
         </div>
     </footer>
 
+    <a href="#top" class="back-to-top" aria-label="Back to top">↑</a>
+
     <script src="scripts.js"></script>
+    <script src="script/header.js"></script>
+    <script src="script/footer.js"></script>
+
 </body>
+
 </html>

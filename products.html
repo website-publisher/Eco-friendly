@@ -4,53 +4,88 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Browse EcoFriendly's collection of eco-friendly products, including home goods, personal care items, and eco gadgets. Use our filters to find exactly what you're looking for.">
-    <title>Products | EcoFriendly</title>
+    <meta name="description"
+        content="Browse Eco Store's collection of eco-friendly products, including home goods, personal care items, and eco gadgets. Use our filters to find exactly what you're looking for.">
+    <title>Products | Eco Store</title>
     <link rel="stylesheet" href="styles/styles.css">
+    <link rel="stylesheet" href="styles/footer.css">
+    <link rel="stylesheet" href="styles/header.css">
+    <link rel="stylesheet" href="styles/product.css">
 </head>
 
 <body>
-    <header>
-        <div class="container">
-            <h1 class="logo"><a href="index.html">EcoFriendly</a></h1>
-            <nav>
-                <ul>
+    <header class="eco-header">
+        <div class="header-container">
+            <div class="logo">
+                <a href="index.html" class="logo-link" aria-label="Eco Store Home">
+                    <span class="logo-icon">🍃</span>
+                    <span class="logo-text">Eco Store</span>
+                </a>
+            </div>
+
+            <nav class="main-nav">
+                <button class="mobile-menu-toggle" aria-label="Toggle menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <ul class="nav-links">
                     <li><a href="index.html">Home</a></li>
-                    <li><a href="products.html">Products</a></li>
+                    <li><a href="products.html" class="active">Shop</a></li>
                     <li><a href="about.html">About Us</a></li>
-                    <li><a href="login.html">Login</a></li>
-                    <li><a href="register.html">Register</a></li>
+                    <li><a href="#contact">Contact Us</a></li>
                 </ul>
             </nav>
+
+            <div class="header-actions">
+                <form class="search-bar" role="search">
+                    <input type="search" placeholder="Search products..." aria-label="Search products">
+                    <button type="submit" aria-label="Submit search">🔍</button>
+                </form>
+
+                <a href="login.html" class="icon-btn" aria-label="My Account">👤</a>
+                <a href="#wishlist" class="icon-btn" aria-label="Wishlist">❤️</a>
+                <div class="eco-cart">
+                    <a href="#" class="cart-link icon-btn" aria-label="Shopping Cart">
+                        🛒 <span class="cart-count">0</span>
+                    </a>
+
+                    <div class="cart-modal" id="cartModal">
+                        <div class="cart-content">
+                            <h2>Your Cart</h2>
+                            <ul id="cartItems"></ul>
+                            <p>Total: <span id="cartTotal">₹0</span></p>
+                            <button id="clearCart">Clear Cart</button>
+                            <button id="closeCart">Close</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="currency-switcher">
+                    <button class="current-currency" aria-label="Select currency">
+                        INR <span class="dropdown-arrow">▼</span>
+                    </button>
+                    <ul class="currency-options">
+                        <li><button aria-label="Switch to USD">USD 🇺🇸</button></li>
+                        <li><button aria-label="Switch to EUR">EUR 🇪🇺</button></li>
+                        <li><button aria-label="Switch to INR">INR 🇮🇳</button></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="promo-bar" role="alert">
+            <p>🌱 100% Joy. 0% Plastic. | Full disclosure | Proudly made in India</p>
+            <button class="close-promo" aria-label="Close promotion banner">✕</button>
         </div>
     </header>
 
     <main>
         <section id="products">
             <h2>Our Products</h2>
-            <div class="filters">
-                <div class="filter-group">
-                    <label for="category">Category:</label>
-                    <select id="category" aria-label="Filter by category">
-                        <option value="home">Home Goods</option>
-                        <option value="personal">Personal Care</option>
-                        <option value="gadgets">Eco Gadgets</option>
-                    </select>
-                </div>
-                <div class="filter-group">
-                    <label for="price">Price Range:</label>
-                    <input type="range" id="price" min="0" max="100" step="10" aria-label="Filter by price range">
-                </div>
-                <div class="filter-group">
-                    <label for="sustainability">Sustainability:</label>
-                    <select id="sustainability" aria-label="Filter by sustainability">
-                        <option value="recycled">Recycled Materials</option>
-                        <option value="zero-waste">Zero Waste</option>
-                    </select>
-                </div>
-            </div>
+
             <div class="product-list">
-                <article class="product">
+                <div class="product">
                     <div class="product-gallery">
                         <div class="slides">
                             <img src="images/product1.jpg" alt="Terracotta Clay Water bottle - 1L">
@@ -62,31 +97,48 @@
                         <button class="next" aria-label="Next slide">&#10095;</button>
                     </div>
                     <h3>Bhumi - Terracotta Clay Water bottle - 1L</h3>
-                    <p>₹800</p>
-                    <button>Add to Cart</button>
-                </article>
-                <article class="product">
-                    <img src="images/product2.jpg" alt="Bamboo Wired Mouse Mini Optical USB Interface (Orange)">
+                    <p class="product-price">₹800</p>
+                    <div class="product-actions">
+                        <button class="btn-add-to-cart" data-id="1" data-name="Bhumi - Terracotta Clay Water bottle - 1L" data-price="800" aria-label="Add to Cart">Add to Cart</button>
+                        <button class="btn-wishlist" aria-label="Add to Wishlist">❤️</button>
+                    </div>
+                </div>
+                <div class="product">
+                    <div class="product-gallery">
+                        <div class="slides">
+                            <img src="images/product2.jpg" alt="Bamboo Wired Mouse Mini Optical USB Interface (Orange)">
+                        </div>
+                        <button class="prev" aria-label="Previous slide">&#10094;</button>
+                        <button class="next" aria-label="Next slide">&#10095;</button>
+                    </div>
                     <h3>Bamboo Wired Mouse Mini Optical USB Interface (Orange)</h3>
-                    <p>₹2,000</p>
-                    <button>Add to Cart</button>
-                </article>
-                <article class="product">
+                    <p class="product-price">₹2000</p>
+                    <div class="product-actions">
+                        <button class="btn-add-to-cart" data-id="2" data-name="Bamboo Wired Mouse Mini Optical USB Interface (Orange)" data-price="2000" aria-label="Add to Cart">Add to Cart</button>
+                        <button class="btn-wishlist" aria-label="Add to Wishlist">❤️</button>
+                    </div>
+                </div>
+                <div class="product">
                     <div class="product-gallery">
                         <div class="slides">
                             <img src="images/product3.webp" alt="Handcrafted Terracotta T’ Time Cups - Set of 2, 350ml">
-                            <img src="images/product3(1).webp" alt="Handcrafted Terracotta T’ Time Cups - Set of 2, 350ml - Side View">
-                            <img src="images/product3(2).webp" alt="Handcrafted Terracotta T’ Time Cups - Set of 2, 350ml - Detail View">
+                            <img src="images/product3(1).webp"
+                                alt="Handcrafted Terracotta T’ Time Cups - Set of 2, 350ml - Side View">
+                            <img src="images/product3(2).webp"
+                                alt="Handcrafted Terracotta T’ Time Cups - Set of 2, 350ml - Detail View">
                             <!-- Add more images as needed -->
                         </div>
                         <button class="prev" aria-label="Previous slide">&#10094;</button>
                         <button class="next" aria-label="Next slide">&#10095;</button>
                     </div>
                     <h3>Handcrafted Terracotta T’ Time Cups - Set of 2, 350ml</h3>
-                    <p>₹300</p>
-                    <button>Add to Cart</button>
-                </article>
-                <article class="product">
+                    <p class="product-price">₹300</p>
+                    <div class="product-actions">
+                        <button class="btn-add-to-cart" data-id="3" data-name="Handcrafted Terracotta T’ Time Cups - Set of 2, 350ml" data-price="300" aria-label="Add to Cart">Add to Cart</button>
+                        <button class="btn-wishlist" aria-label="Add to Wishlist">❤️</button>
+                    </div>
+                </div>
+                <div class="product">
                     <div class="product-gallery">
                         <div class="slides">
                             <img src="images/product4.webp" alt="'LIT'le Diwali Delights">
@@ -98,10 +150,13 @@
                         <button class="next" aria-label="Next slide">&#10095;</button>
                     </div>
                     <h3>'LIT'le Diwali Delights</h3>
-                    <p>₹900</p>
-                    <button>Add to Cart</button>
-                </article>
-                <article class="product">
+                    <p class="product-price">₹900</p>
+                    <div class="product-actions">
+                        <button class="btn-add-to-cart" data-id="4" data-name="'LIT'le Diwali Delights" data-price="900" aria-label="Add to Cart">Add to Cart</button>
+                        <button class="btn-wishlist" aria-label="Add to Wishlist">❤️</button>
+                    </div>
+                </div>
+                <div class="product">
                     <div class="product-gallery">
                         <div class="slides">
                             <img src="images/product5.webp" alt="Serene Splendour Gift Hamper">
@@ -113,10 +168,13 @@
                         <button class="next" aria-label="Next slide">&#10095;</button>
                     </div>
                     <h3>Serene Splendour Gift Hamper</h3>
-                    <p>₹7000</p>
-                    <button>Add to Cart</button>
-                </article>
-                <article class="product">
+                    <p class="product-price">₹7000</p>
+                    <div class="product-actions">
+                        <button class="btn-add-to-cart" data-id="5" data-name="Serene Splendour Gift Hamper" data-price="7000" aria-label="Add to Cart">Add to Cart</button>
+                        <button class="btn-wishlist" aria-label="Add to Wishlist">❤️</button>
+                    </div>
+                </div>
+                <div class="product">
                     <div class="product-gallery">
                         <div class="slides">
                             <img src="images/product6.webp" alt="Festival of Lights Gift Hamper">
@@ -128,81 +186,137 @@
                         <button class="next" aria-label="Next slide">&#10095;</button>
                     </div>
                     <h3>Festival of Lights Gift Hamper</h3>
-                    <p>₹4000</p>
-                    <button>Add to Cart</button>
-                </article>
-                <article class="product">
+                    <p class="product-price">₹4000</p>
+                    <div class="product-actions">
+                        <button class="btn-add-to-cart" data-id="6" data-name="Festival of Lights Gift Hamper" data-price="4000" aria-label="Add to Cart">Add to Cart</button>
+                        <button class="btn-wishlist" aria-label="Add to Wishlist">❤️</button>
+                    </div>
+                </div>
+                <div class="product">
                     <div class="product-gallery">
                         <div class="slides">
-                            <img src="images/product7.webp" alt="Terracotta Clay Water bottle - 1L">
-                            <img src="images/product7(1).webp" alt="Terracotta Clay Water bottle - 1L - Side View">
+                            <img src="images/product7.webp" alt="Manthan Porcelain Mug - Multicolour, Churn">
+                            <img src="images/product7(1).webp" alt="Side View">
                             <img src="images/product7(2).webp" alt="Terracotta Clay Water bottle - 1L - Detail View">
                             <img src="images/product7(3).webp" alt="Terracotta Clay Water bottle - 1L - fourth View">
-                            <!-- Add more images as needed -->
                         </div>
                         <button class="prev" aria-label="Previous slide">&#10094;</button>
                         <button class="next" aria-label="Next slide">&#10095;</button>
                     </div>
                     <h3>Manthan Porcelain Mug - Multicolour, Churn</h3>
-                    <p>₹1000</p>
-                    <button>Add to Cart</button>
-                </article>
-                <article class="product">
+                    <p class="product-price">₹1000</p>
+                    <div class="product-actions">
+                        <button class="btn-add-to-cart" data-id="7" data-name="Manthan Porcelain Mug - Multicolour, Churn" data-price="1000" aria-label="Add to Cart">Add to Cart</button>
+                        <button class="btn-wishlist" aria-label="Add to Wishlist">❤️</button>
+                    </div>
+                </div>
+                <div class="product">
                     <div class="product-gallery">
                         <div class="slides">
                             <img src="images/product8.webp" alt="Manthan Porcelain Mug - Multicolour, Ocean">
-                            <img src="images/product8(1).jpg" alt="Manthan Porcelain Mug - Multicolour, Ocean - Side View">
-                            <img src="images/product8(2).jpg" alt="Manthan Porcelain Mug - Multicolour, Ocean - Detail View">
-                            <img src="images/product8(3).jpg" alt="Manthan Porcelain Mug - Multicolour, Ocean - fourth View">
-                            <img src="images/product8(4).jpg" alt="Manthan Porcelain Mug - Multicolour, Ocean - fifth View">
+                            <img src="images/product8(1).jpg"
+                                alt="Manthan Porcelain Mug - Multicolour, Ocean - Side View">
+                            <img src="images/product8(2).jpg"
+                                alt="Manthan Porcelain Mug - Multicolour, Ocean - Detail View">
+                            <img src="images/product8(3).jpg"
+                                alt="Manthan Porcelain Mug - Multicolour, Ocean - fourth View">
+                            <img src="images/product8(4).jpg"
+                                alt="Manthan Porcelain Mug - Multicolour, Ocean - fifth View">
                             <!-- Add more images as needed -->
                         </div>
                         <button class="prev" aria-label="Previous slide">&#10094;</button>
                         <button class="next" aria-label="Next slide">&#10095;</button>
                     </div>
                     <h3>Manthan Porcelain Mug - Multicolour, Ocean</h3>
-                    <p>₹1000</p>
-                    <button>Add to Cart</button>
-                </article>
-                <article class="product">
+                    <p class="product-price">₹1000</p>
+                    <div class="product-actions">
+                        <button class="btn-add-to-cart" data-id="8" data-name="Manthan Porcelain Mug - Multicolour, Ocean" data-price="1000" aria-label="Add to Cart">Add to Cart</button>
+                        <button class="btn-wishlist" aria-label="Add to Wishlist">❤️</button>
+                    </div>
+                </div>
+                <div class="product">
                     <div class="product-gallery">
                         <div class="slides">
-                            <img src="images/product9.jpg" alt="Manthan Porcelain Mugs - Set of 2, Multicolour, Churn & Ocean">
-                            <img src="images/product9(1).jpg" alt="Manthan Porcelain Mugs - Set of 2, Multicolour, Churn & Ocean - Side View">
-                            <img src="images/product9(2).jpg" alt="Manthan Porcelain Mugs - Set of 2, Multicolour, Churn & Ocean - Detail View">
-                            <img src="images/product9(3).jpg" alt="Manthan Porcelain Mugs - Set of 2, Multicolour, Churn & Ocean - fourth View">
-                            <img src="images/product9(4).jpg" alt="Manthan Porcelain Mugs - Set of 2, Multicolour, Churn & Ocean - one cup View">
-                            <img src="images/product9(5).jpg" alt="Manthan Porcelain Mugs - Set of 2, Multicolour, Churn & Ocean - one cup View">
+                            <img src="images/product9.jpg"
+                                alt="Manthan Porcelain Mugs - Set of 2, Multicolour, Churn & Ocean">
+                            <img src="images/product9(1).jpg"
+                                alt="Manthan Porcelain Mugs - Set of 2, Multicolour, Churn & Ocean - Side View">
+                            <img src="images/product9(2).jpg"
+                                alt="Manthan Porcelain Mugs - Set of 2, Multicolour, Churn & Ocean - Detail View">
+                            <img src="images/product9(3).jpg"
+                                alt="Manthan Porcelain Mugs - Set of 2, Multicolour, Churn & Ocean - fourth View">
+                            <img src="images/product9(4).jpg"
+                                alt="Manthan Porcelain Mugs - Set of 2, Multicolour, Churn & Ocean - one cup View">
+                            <img src="images/product9(5).jpg"
+                                alt="Manthan Porcelain Mugs - Set of 2, Multicolour, Churn & Ocean - one cup View">
                             <!-- Add more images as needed -->
                         </div>
                         <button class="prev" aria-label="Previous slide">&#10094;</button>
                         <button class="next" aria-label="Next slide">&#10095;</button>
                     </div>
                     <h3>Manthan Porcelain Mugs - Set of 2, Multicolour, Churn & Ocean</h3>
-                    <p>₹2000</p>
-                    <button>Add to Cart</button>
-                </article>
+                    <p class="product-price">₹2000</p>
+                    <div class="product-actions">
+                        <button class="btn-add-to-cart" data-id="9" data-name="Manthan Porcelain Mugs - Set of 2, Multicolour, Churn & Ocean" data-price="2000" aria-label="Add to Cart">Add to Cart</button>
+                        <button class="btn-wishlist" aria-label="Add to Wishlist">❤️</button>
+                    </div>
+                </div>
                 <!-- Add more products as needed -->
             </div>
         </section>
     </main>
 
-    <footer>
-        <div class="container">
-            <p>&copy; 2024 EcoFriendly</p>
-            <div class="social">
-                <a href="#" aria-label="Facebook">Facebook</a>
-                <a href="#" aria-label="Twitter">Twitter</a>
-                <a href="#" aria-label="Instagram">Instagram</a>
+    <footer class="eco-footer">
+        <div class="footer-container">
+            <div class="footer-section logo-section">
+                <a href="index.html" class="logo-link" aria-label="Eco Store Home">
+                    <span class="logo-icon">🍃</span>
+                    <span class="logo-text">Eco Store</span>
+                </a>
+                <p>Your trusted source for sustainable products.</p>
             </div>
-            <form action="#" method="post" class="newsletter">
-                <input type="email" placeholder="Subscribe to our newsletter" required aria-label="Subscribe to our newsletter">
-                <button type="submit">Subscribe</button>
-            </form>
+
+            <nav class="footer-section nav-links">
+                <h4>Explore</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="products.html">Shop</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+
+            <div class="footer-section social-media">
+                <h4>Connect With Us</h4>
+                <ul>
+                    <li><a href="#" aria-label="Follow us on Twitter">🐦</a></li>
+                    <li><a href="#" aria-label="Connect on LinkedIn">💼</a></li>
+                    <li><a href="#" aria-label="Follow us on Instagram">📷</a></li>
+                    <li><a href="#" aria-label="Like us on Facebook">👍</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section newsletter-signup">
+                <h4>Join Our Community</h4>
+                <form action="#" method="post">
+                    <input type="email" name="email" placeholder="Enter your email"
+                        aria-label="Enter your email for newsletter" required>
+                    <button type="submit" aria-label="Subscribe to newsletter">Subscribe</button>
+                </form>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2024 Eco Store. All Rights Reserved. | <a href="/privacy-policy">Privacy Policy</a></p>
         </div>
     </footer>
 
+    <a href="#top" class="back-to-top" aria-label="Back to top">↑</a>
+
     <script src="script/script.js"></script>
+    <script src="script/header.js"></script>
+    <script src="script/footer.js"></script>
+    <!-- <script src="script/product.js"></script> -->
 </body>
 
 </html>

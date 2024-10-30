@@ -7,6 +7,8 @@ document.addEventListener('DOMContentLoaded', function () {
         const prevButton = gallery.querySelector('.prev');
         const nextButton = gallery.querySelector('.next');
 
+        if (images.length === 0) return; // Check if there are images
+
         let index = 0;
         let interval;
 
@@ -23,7 +25,6 @@ document.addEventListener('DOMContentLoaded', function () {
         }
 
         function updateAria() {
-            // Update ARIA attributes for accessibility
             slides.setAttribute('aria-live', 'polite');
             slides.setAttribute('aria-label', `Image ${index + 1} of ${images.length}`);
         }
@@ -31,7 +32,7 @@ document.addEventListener('DOMContentLoaded', function () {
         function startAutoSlide() {
             interval = setInterval(function () {
                 showSlide(index + 1);
-            }, 5000); // Change image every 5 seconds
+            }, 5000);
         }
 
         function stopAutoSlide() {
@@ -41,13 +42,13 @@ document.addEventListener('DOMContentLoaded', function () {
         prevButton.addEventListener('click', function () {
             showSlide(index - 1);
             stopAutoSlide();
-            startAutoSlide(); // Restart auto slide after manual action
+            startAutoSlide();
         });
 
         nextButton.addEventListener('click', function () {
             showSlide(index + 1);
             stopAutoSlide();
-            startAutoSlide(); // Restart auto slide after manual action
+            startAutoSlide();
         });
 
         gallery.addEventListener('mouseenter', stopAutoSlide);
@@ -57,8 +58,10 @@ document.addEventListener('DOMContentLoaded', function () {
         gallery.addEventListener('keydown', function (event) {
             if (event.key === 'ArrowLeft') {
                 showSlide(index - 1);
+                stopAutoSlide(); // Pause auto slide
             } else if (event.key === 'ArrowRight') {
                 showSlide(index + 1);
+                stopAutoSlide(); // Pause auto slide
             }
         });
 

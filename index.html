@@ -4,127 +4,220 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Welcome to EcoFriendly! Discover our range of sustainable and eco-friendly products, learn about our mission, and explore our featured collections.">
-    <title>Home | EcoFriendly</title>
+    <meta name="description"
+        content="Welcome to Eco Store! Discover our range of sustainable and eco-friendly products, learn about our mission, and explore our featured collections.">
+    <title>Home | Eco Store</title>
+    <link rel="stylesheet" href="styles/footer.css">
+    <link rel="stylesheet" href="styles/header.css">
     <link rel="stylesheet" href="styles/styles.css">
-    <!-- <link rel="stylesheet" href="styles/login register.css"> -->
 </head>
 
 <body>
-    <header>
-        <div class="container">
-            <h1>EcoFriendly</h1>
-            <nav>
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="products.html">Products</a></li>
+    <header class="eco-header">
+        <div class="header-container">
+            <div class="logo">
+                <a href="index.html" class="logo-link" aria-label="Eco Store Home">
+                    <span class="logo-icon">🍃</span>
+                    <span class="logo-text">Eco Store</span>
+                </a>
+            </div>
+
+            <nav class="main-nav">
+                <button class="mobile-menu-toggle" aria-label="Toggle menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <ul class="nav-links">
+                    <li><a href="index.html" class="active">Home</a></li>
+                    <li><a href="products.html">Shop</a></li>
                     <li><a href="about.html">About Us</a></li>
-                    <li><a href="login.html">Login</a></li>
-                    <li><a href="register.html">Register</a></li>
+                    <li><a href="#contact">Contact Us</a></li>
                 </ul>
             </nav>
+
+            <div class="header-actions">
+                <form class="search-bar" role="search">
+                    <input type="search" placeholder="Search products..." aria-label="Search products">
+                    <button type="submit" aria-label="Submit search">🔍</button>
+                </form>
+
+                <a href="login.html" class="icon-btn" aria-label="My Account">👤</a>
+                <a href="#wishlist" class="icon-btn" aria-label="Wishlist">❤️</a>
+                <div class="eco-cart">
+                    <a href="#" class="cart-link icon-btn" aria-label="Shopping Cart">
+                        🛒 <span class="cart-count">0</span>
+                    </a>
+
+                    <div class="cart-modal" id="cartModal">
+                        <div class="cart-content">
+                            <h2>Your Cart</h2>
+                            <ul id="cartItems"></ul>
+                            <p>Total: <span id="cartTotal">₹0</span></p>
+                            <button id="clearCart">Clear Cart</button>
+                            <button id="closeCart">Close</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="currency-switcher">
+                    <button class="current-currency" aria-label="Select currency">
+                        INR <span class="dropdown-arrow">▼</span>
+                    </button>
+                    <ul class="currency-options">
+                        <li><button aria-label="Switch to USD">USD 🇺🇸</button></li>
+                        <li><button aria-label="Switch to EUR">EUR 🇪🇺</button></li>
+                        <li><button aria-label="Switch to INR">INR 🇮🇳</button></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="promo-bar" role="alert">
+            <p>🌱 100% Joy. 0% Plastic. | Full disclosure | Proudly made in India</p>
+            <button class="close-promo" aria-label="Close promotion banner">✕</button>
         </div>
     </header>
 
-    <main>
-        <section id="home">
-            <div class="hero">
-                <h2>Sustainable Living Starts Here</h2>
-                <p>Discover eco-friendly products that make a difference.</p>
-                <a href="products.html" class="btn" aria-label="Explore our range of eco-friendly products">Explore Products</a>
-                <a href="about.html" class="btn" aria-label="Learn more about our mission and values">Learn More</a>
+    <main id="home">
+        <!-- Hero Section -->
+        <section class="hero">
+            <h2>Welcome to Eco Store</h2>
+            <p>Your one-stop shop for eco-friendly products!</p>
+            <a href="products.html" class="btn" aria-label="Explore our range of eco-friendly products">Shop Now</a>
+        </section>
+
+        <!-- Features Section -->
+        <section class="features">
+            <div class="feature">
+                <img src="images/feature1.png" alt="Sustainable Materials">
+                <h3>Planet Positive</h3>
+                <p>Shop Only Sustainable Products.</p>
             </div>
-            <div class="features">
-                <article class="feature">
-                    <img src="images/feature1.png" alt="Sustainable Materials">
-                    <h3>Planet Positive</h3>
-                    <p>Shop Only Sustainable Products.</p>
-                </article>
-                <article class="feature">
-                    <img src="images/feature2.png" alt="Ethical Production">
-                    <h3>Cruelty-Free & Plastic-Free</h3>
-                    <p>Ethically Made.</p>
-                </article>
-                <article class="feature">
-                    <img src="images/feature3.png" alt="Eco-Friendly Packaging">
-                    <h3>Carbon Neutral</h3>
-                    <p>Pledge for Climate Action.</p>
-                </article>
+            <div class="feature">
+                <img src="images/feature2.png" alt="Ethical Production">
+                <h3>Cruelty-Free & Plastic-Free</h3>
+                <p>Ethically Made.</p>
             </div>
-            <div class="products-preview">
-                <h2>Featured Products</h2>
-                <article class="product">
-                    <div class="product-gallery">
-                        <div class="slides">
-                            <img src="images/product1.jpg" alt="Terracotta Clay Water bottle - 1L">
-                            <img src="images/product1(1).jpg" alt="Terracotta Clay Water bottle - 1L - Side View">
-                            <img src="images/product1(2).jpg" alt="Terracotta Clay Water bottle - 1L - Detail View">
-                            <!-- Add more images as needed -->
-                        </div>
-                        <button class="prev" aria-label="Previous slide">&#10094;</button>
-                        <button class="next" aria-label="Next slide">&#10095;</button>
+            <div class="feature">
+                <img src="images/feature3.png" alt="Eco-Friendly Packaging">
+                <h3>Carbon Neutral</h3>
+                <p>Pledge for Climate Action.</p>
+            </div>
+        </section>
+
+        <!-- Products Preview Section -->
+        <section class="products-preview">
+            <h2>Featured Products</h2>
+            <div class="product">
+                <div class="product-gallery">
+                    <div class="slides">
+                        <img src="images/product1.jpg" alt="Terracotta Clay Water bottle - 1L">
+                        <img src="images/product1(1).jpg" alt="Terracotta Clay Water bottle - 1L - Side View">
+                        <img src="images/product1(2).jpg" alt="Terracotta Clay Water bottle - 1L - Detail View">
+                        <!-- Add more images as needed -->
                     </div>
-                    <h3>Bhumi - Terracotta Clay Water bottle - 1L</h3>
-                    <p>₹800</p>
-                    <a href="products.html" class="btn" aria-label="Buy Bhumi - Terracotta Clay Water bottle - 1L">Shop Now</a>
-                </article>                
-                <article class="product">
-                    <div class="product-gallery">
-                        <div class="slides">
-                            <img src="images/product5.webp" alt="Serene Splendour Gift Hamper">
-                            <img src="images/product5(1).webp" alt="Serene Splendour Gift Hamper - Side View">
-                            <img src="images/product5(2).webp" alt="Serene Splendour Gift Hamper - Detail View">
-                            <!-- Add more images as needed -->
-                        </div>
-                        <button class="prev" aria-label="Previous slide">&#10094;</button>
-                        <button class="next" aria-label="Next slide">&#10095;</button>
-                    </div>
-                    <h3>Serene Splendour Gift Hamper</h3>
-                    <p>₹7000</p>
-                    <a href="products.html" class="btn" aria-label="Buy Serene Splendour Gift Hamper">Shop Now</a>
-                </article>
-                <article class="product">
-                    <div class="product-gallery">
-                        <div class="slides">
-                            <img src="images/product7.webp" alt="Terracotta Clay Water bottle - 1L">
-                            <img src="images/product7(1).webp" alt="Terracotta Clay Water bottle - 1L - Side View">
-                            <img src="images/product7(2).webp" alt="Terracotta Clay Water bottle - 1L - Detail View">
-                            <img src="images/product7(3).webp" alt="Terracotta Clay Water bottle - 1L - fourth View">
-                            <!-- Add more images as needed -->
-                        </div>
-                        <button class="prev" aria-label="Previous slide">&#10094;</button>
-                        <button class="next" aria-label="Next slide">&#10095;</button>
-                    </div>
-                    <h3>Manthan Porcelain Mug - Multicolour, Churn</h3>
-                    <p>₹1000</p>
-                    <a href="products.html" class="btn" aria-label="Buy Manthan Porcelain Mug - Multicolour, Churn">Shop Now</a>
-                </article>
-                <!-- Add more products as needed -->
-                <a href="products.html" class="btn" aria-label="Explore more products">Explore More</a>
+                    <button class="prev" aria-label="Previous slide">&#10094;</button>
+                    <button class="next" aria-label="Next slide">&#10095;</button>
+                </div>
+                <h3>Bhumi - Terracotta Clay Water bottle - 1L</h3>
+                <p>₹800</p>
+                <a href="products.html" class="btn" aria-label="Buy Bhumi - Terracotta Clay Water bottle - 1L">Shop
+                    Now</a>
             </div>
-            <div class="about-teaser">
-                <p>Learn more about our mission and values.</p>
-                <a href="about.html" class="btn" aria-label="Learn more about our mission and values">Learn More</a>
+            <div class="product">
+                <div class="product-gallery">
+                    <div class="slides">
+                        <img src="images/product5.webp" alt="Serene Splendour Gift Hamper">
+                        <img src="images/product5(1).webp" alt="Serene Splendour Gift Hamper - Side View">
+                        <img src="images/product5(2).webp" alt="Serene Splendour Gift Hamper - Detail View">
+                        <!-- Add more images as needed -->
+                    </div>
+                    <button class="prev" aria-label="Previous slide">&#10094;</button>
+                    <button class="next" aria-label="Next slide">&#10095;</button>
+                </div>
+                <h3>Serene Splendour Gift Hamper</h3>
+                <p>₹7000</p>
+                <a href="products.html" class="btn" aria-label="Buy Serene Splendour Gift Hamper">Shop Now</a>
             </div>
+            <div class="product">
+                <div class="product-gallery">
+                    <div class="slides">
+                        <img src="images/product7.webp" alt="Terracotta Clay Water bottle - 1L">
+                        <img src="images/product7(1).webp" alt="Terracotta Clay Water bottle - 1L - Side View">
+                        <img src="images/product7(2).webp" alt="Terracotta Clay Water bottle - 1L - Detail View">
+                        <img src="images/product7(3).webp" alt="Terracotta Clay Water bottle - 1L - fourth View">
+                        <!-- Add more images as needed -->
+                    </div>
+                    <button class="prev" aria-label="Previous slide">&#10094;</button>
+                    <button class="next" aria-label="Next slide">&#10095;</button>
+                </div>
+                <h3>Manthan Porcelain Mug - Multicolour, Churn</h3>
+                <p>₹1000</p>
+                <a href="products.html" class="btn" aria-label="Buy Manthan Porcelain Mug - Multicolour, Churn">Shop
+                    Now</a>
+            </div>
+            <!-- Add more products as needed -->
+        </section>
+
+        <!-- About Teaser Section -->
+        <section class="about-teaser">
+            <p>Learn more about our commitment to sustainability.</p>
+            <a href="about.html" class="btn" aria-label="Learn more about our commitment to sustainability.">Read
+                More</a>
         </section>
     </main>
 
-    <footer>
-        <div class="container">
-            <p>&copy; 2024 EcoFriendly</p>
-            <div class="social">
-                <a href="#" aria-label="Visit our Facebook page">Facebook</a>
-                <a href="#" aria-label="Visit our Twitter profile">Twitter</a>
-                <a href="#" aria-label="Visit our Instagram profile">Instagram</a>
+    <footer class="eco-footer">
+        <div class="footer-container">
+            <div class="footer-section logo-section">
+                <a href="index.html" class="logo-link" aria-label="Eco Store Home">
+                    <span class="logo-icon">🍃</span>
+                    <span class="logo-text">Eco Store</span>
+                </a>
+                <p>Your trusted source for sustainable products.</p>
             </div>
-            <form action="#" method="post" class="newsletter">
-                <input type="email" placeholder="Subscribe to our newsletter" required aria-label="Subscribe to our newsletter">
-                <button type="submit">Subscribe</button>
-            </form>
+
+            <nav class="footer-section nav-links">
+                <h4>Explore</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="products.html">Shop</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+
+            <div class="footer-section social-media">
+                <h4>Connect With Us</h4>
+                <ul>
+                    <li><a href="#" aria-label="Follow us on Twitter">🐦</a></li>
+                    <li><a href="#" aria-label="Connect on LinkedIn">💼</a></li>
+                    <li><a href="#" aria-label="Follow us on Instagram">📷</a></li>
+                    <li><a href="#" aria-label="Like us on Facebook">👍</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section newsletter-signup">
+                <h4>Join Our Community</h4>
+                <form action="#" method="post">
+                    <input type="email" name="email" placeholder="Enter your email"
+                        aria-label="Enter your email for newsletter" required>
+                    <button type="submit" aria-label="Subscribe to newsletter">Subscribe</button>
+                </form>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2024 Eco Store. All Rights Reserved. | <a href="/privacy-policy">Privacy Policy</a></p>
         </div>
     </footer>
 
+    <a href="#top" class="back-to-top" aria-label="Back to top">↑</a>
+
     <script src="script/script.js"></script>
+    <script src="script/header.js"></script>
+    <script src="script/footer.js"></script>
 </body>
 
 </html>
